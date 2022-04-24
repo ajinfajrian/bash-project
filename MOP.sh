@@ -108,6 +108,3 @@ else
         echo "${red}Linux not registered on MOP${nc}"
 
 fi
-
-
-apps_check=$()
