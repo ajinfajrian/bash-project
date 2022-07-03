@@ -1,4 +1,4 @@
-o "=== Create & Limiting User Access ==="
+echo "=== Create & Limiting User Access ==="
 sudo echo "%USER  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoer.d/$USER
 sudo useradd code-user -s /bin/bash -d /var/www/ -c "CODE-SERVER"
 sudo setfacl -d -m u:code-user:rwx -R /var/www/
