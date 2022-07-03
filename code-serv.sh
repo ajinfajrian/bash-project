@@ -21,6 +21,6 @@ sudo usermod 600 /etc/sudoers.d/code-user
 sudo su - code-user
 curl -fsSL https://code-server.dev/install.sh | sh
 sed -i '/bind-addr:/d' ~/.config/code-server/config.yaml
-sed -i '/bind-addr: 0.0.0.0:8080/d' ~/.config/code-server/config.yaml
+echo '/bind-addr: 0.0.0.0:8080/d' >> ~/.config/code-server/config.yaml
 sudo systemctl enable --now code-server@code-user
 echo "=== Done ... ==="
