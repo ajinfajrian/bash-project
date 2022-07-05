@@ -12,8 +12,14 @@ sudo setfacl -m u:code-user:--- /etc/shadow
 sudo setfacl -m u:code-user:--- /etc/shadow-
 sudo setfacl -m u:code-user:--- /etc/group
 sudo setfacl -m u:code-user:--- /etc/group-
+sudo setfacl -m u:code-user:--- /etc/hosts
+sudo setfacl -m u:code-user:--- /etc/hostname
+sudo setfacl -m u:code-user:--- /bin/hostname
 sudo setfacl -m u:code-user:--- /bin/ss
 sudo setfacl -m u:code-user:--- /bin/netstat
+sudo setfacl -m u:code-user:--- /usr/bin/find
+sudo setfacl -m u:code-user:--- /usr/bin/mlocate
+sudo setfacl -m u:code-user:--- /usr/bin/locate
 sudo echo "%code-user ALL=NOPASSWD: /bin/systemctl enable --now code-server@code-user" >> /etc/sudoers.d/code-user
 sudo echo "%code-user ALL=NOPASSWD: /bin/systemctl start code-server@code-user" >> /etc/sudoers.d/code-user
 sudo echo "%code-user ALL=NOPASSWD: /bin/systemctl restart code-server@code-user" >> /etc/sudoers.d/code-user
