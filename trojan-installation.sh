@@ -39,6 +39,7 @@ cd "$TMPDIR"
 echo Downloading $NAME $VERSION...
 curl -LO --progress-bar "$DOWNLOADURL" || wget -q --show-progress "$DOWNLOADURL"
 
+sudo adduser trojan --shell /usr/sbin/nologin
 
 os_name=$(cat /etc/os-release | awk -F '=' '/^NAME/{print $2}' | tr -d '"')
 if [ "$os_name" == "Ubuntu" ]
@@ -49,9 +50,6 @@ then
         sudo dnf install -y acl
 
 fi
-
-
-sudo apt install -y acl
 
 echo Unpacking $NAME $VERSION...
 tar xf "$TARBALL"
